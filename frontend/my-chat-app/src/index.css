@@ -1,0 +1,542 @@
+
+*{
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+h1,h2,h3,p{
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+.poppins-thin {
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+
+.container{
+  margin-inline: 200px;
+}
+
+.Navbar-container{
+  display: flex;
+  justify-content: space-between;
+  padding-block: 20px;
+ 
+}
+.Navitems {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.Nav-a {
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.black-background {
+  background-color: black;
+  height: 87.5vh;
+}
+
+.purple-background {
+  background-color: #864AF9;
+}
+
+.white-background {
+  background-color: white;
+}
+
+.purple-text {
+  color: #864AF9;
+}
+
+.white-text {
+  color: whitesmoke;
+}
+
+.black-text {
+  color: black;
+}
+
+.grey-text {
+  color: #8E8E8E;
+}
+
+.btn-nav {
+  background-color: white;
+  color: #864AF9;
+  border: 3px solid transparent; /* Transparent border */
+  border-radius: 5px;
+  padding: 5px 20px; /* Combined padding shorthand */
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Add transitions for background color and border color */
+
+}
+
+.btn-nav:hover, .btn-nav:focus-visible {
+  background-color: transparent;
+  border-color: white; /* Change border color on hover */
+  color: white;
+}
+
+.btn-startHere {
+  background-color: transparent;
+  color: white;
+  border: 3px solid white; /* Transparent border */
+  border-radius: 5px;
+  padding: 5px 20px; /* Combined padding shorthand */
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Add transitions for background color and border color */
+
+}
+
+.btn-startHere:hover, .btn-startHere:focus-visible {
+  background-color: #864AF9;
+  border-color: #864AF9; /* Change border color on hover */
+  color: white;
+}
+
+
+.hero-content {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.home-container {
+
+  overflow: hidden;
+}
+
+.HeroImg{
+  position: relative;
+  right: -120px;
+  top: 50px;
+  
+}
+
+.hero-content img {
+  width: 800px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.HeroText{
+ display: flex;
+ flex-direction: column;
+ gap: 40px;
+}
+
+.test {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login-container{
+    padding-block : 20px;
+    padding-inline: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 30px;
+  border-radius: 10px;
+
+}
+
+.login-container button {
+  align-self: stretch;
+}
+
+.login-container img {
+  width: 20px;
+  position: absolute;
+  top: 6.5%;
+  right: 5%;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.login-text {
+  font-size:2em;
+}
+
+.btn-login {
+  background-color: #864AF9;
+  border: 3px solid white; /* Transparent border */
+  border-radius: 7px;
+  padding: 5px 20px; /* Combined padding shorthand */
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Add transitions for background color and border color */
+  padding-block: 10px;
+}
+
+.btn-login:hover, .btn-login:focus-visible {
+  background-color: white;
+  border: 3px solid #864AF9; /* Change border color on hover */
+  color: #864AF9;
+}
+
+.input-container {
+
+  position: relative;
+}
+.input-label {
+  position: absolute;
+  top: -10px; /* Adjust this value to position the label as desired */
+  left: 10px;
+  background-color: white; /* This ensures the label covers the border */
+  padding: 0 5px;
+  font-weight: bold;
+
+  z-index: 1; /* Ensure label appears above the input field */
+}
+.input-field {
+  padding: 15px;
+  border: 3px solid #864AF9;
+  border-radius: 5px;
+  width:260px;
+  align-self: stretch;
+  position: relative; /* Needed for pseudo-elements */
+}
+
+.UserIcon{
+  position: absolute;
+  bottom: 35%; 
+}
+
+.LockIcon{
+  position: absolute;
+
+  bottom: 35%; 
+}
+
+.gender {
+  display: flex;
+  justify-content: space-between;
+  align-self: stretch;
+} 
+
+.GenderIcon {
+  background-color: white;
+  border: 3px solid #864AF9; 
+  border-radius: 5px;
+  padding-inline: 50px;
+  
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Add transitions for background color and border color */
+  padding-block: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 50px;
+}
+
+.GenderIcon:hover, .GenderIcon:focus-visible {
+  background-color: #864AF9;
+  border:3px solid #864AF9 ;
+}
+
+.GenderIcon img {
+  width: 25px;
+  position: absolute;
+  left: 40%;
+  top: 25%;
+}
+
+.CloseImgSignup{
+  position: absolute;
+  bottom: 91.7%;
+}
+
+
+.hover-effect:hover{
+  text-decoration: underline;
+
+}
+
+.hidden {
+  display: none;
+}
+
+.shown{
+  display: block;
+}
+
+.blur {
+  filter: blur(5px);
+}
+
+.app-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  gap: 0px;
+  
+  height: 100vh;
+}
+
+.SearchBar-container img{
+  width: 50px; 
+  cursor: pointer;
+}
+
+.SearchBar-container{
+  display: flex;
+  justify-content: space-between;
+  
+  
+}
+.search-field {
+  background-color: #864AF9;
+  border: none;
+  border-radius: 25px;
+  padding-inline: 20px;
+  width: 60%;
+}
+.search-field::placeholder{
+  text-align: left;
+  color: white;
+  font-weight: bold;
+}
+.SideBar-container {
+  position: relative;
+  display: flex;
+  height: 520px;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-right: 5px solid #864AF9;
+  
+}
+
+@keyframes slideIn1 {
+  0% {transform: translateX(50%);}
+  100%{transform:translateX(0%)}
+}
+
+.conversations img{
+  width: 50px;
+}
+
+
+
+
+
+.conversations {
+  display: flex;
+  gap:13px;
+  padding: 5px;
+  align-items: center;
+  
+}
+.Friends-container :hover {
+  background-color: #864AF9;
+  border-radius: 5px;
+  color: white;
+}
+
+.Friends-container{
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  overflow-y: scroll;
+  max-height: 370px;
+}
+
+
+
+.Friends-container hr{
+  border: px solid #864AF9;
+}
+
+
+
+.logout-img{
+  position: absolute;
+  margin-top: 0px;
+  width: 40px;
+  cursor: pointer;
+  bottom: 3%;
+  left:4%;
+}
+
+.chat-container {
+  padding: 20px;
+  min-width: 700px;
+  max-height: 385px;
+  overflow-y: scroll;
+}
+
+
+.chat-wrapper{
+  min-height: 200px;
+  animation:slideIn 0.7s ease-in;
+}
+@keyframes slideIn {
+  0% {transform:translateX(-50%);}
+  100%{transform :translateX(0%)}
+}
+
+.towho-container {
+  padding-block: 20px;
+  padding-inline: 10px;
+  border-top-right-radius: 25px;
+}
+
+.towho-container p {
+  font-size: 1.1rem;
+}
+
+.SendMessage-input img {
+  width: 23px;
+  position: absolute;
+  cursor: pointer;
+  right: 5%;
+  top: 20%;
+}
+
+.SendMessage-input input {
+  background-color: white;
+  border: 5px solid #864AF9;
+  border-radius: 7px;
+  padding: 10px;
+  width: 90%;
+  margin-bottom: 20px;
+  
+}
+.SendMessage-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  margin-bottom: 0px;
+  border-bottom-right-radius: 25px;
+}
+
+.SendMessage-input input::placeholder{
+  color: #864AF9;
+  font-weight: bold;
+}
+
+
+
+
+
+.message-container {
+  display:flex;
+  gap:10px;
+  align-items: center;
+  justify-content: right;
+}
+
+.message-container img {
+  width:55px;
+}
+
+.bubble-time{
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  align-items: flex-end;
+  padding-top: 22px;
+}
+
+.bubble {
+  max-width: 150px;
+  border-radius:25px;
+  padding-inline: 10px;
+  padding-block: 5px;
+  
+}
+.time {
+  text-align: left;
+  margin-top: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track{
+  cursor: pointer;
+  
+  background: #8E8E8E;
+}
+::-webkit-scrollbar-thumb{
+  background: #864AF9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #864AF9;
+}
