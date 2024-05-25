@@ -9,15 +9,13 @@ function ChatBar() {
     <>
       {SelectedConversation ?  <div className='chat-wrapper'>
           <UserFriend/>
-          <div className='chat-container white-background'>
+          <div className='chat-container white-background overflow-auto'>
             <Messages/>
           </div>
           <SendMessage/>
       </div> 
       :null
-      }
-     
-      
+  }
         
     </>
   )

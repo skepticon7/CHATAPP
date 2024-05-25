@@ -1,4 +1,6 @@
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 *{
   font-family: "Poppins", sans-serif;
 }
@@ -7,7 +9,7 @@ body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
+  overflow: hidden;
 }
 
 h1,h2,h3,p{
@@ -65,7 +67,7 @@ a{
 }
 
 
-
+/* 
 .container{
   margin-inline: 200px;
 }
@@ -86,11 +88,11 @@ a{
 .Nav-a {
   text-decoration: none;
   font-size: 1.2em;
-}
+} */
 
 .black-background {
   background-color: black;
-  height: 87.5vh;
+  height: 90vh;
 }
 
 .purple-background {
@@ -154,23 +156,29 @@ a{
 }
 
 
-.hero-content {
+/* .hero-content {
   display: flex;
-  gap: 20px;
+  gap: 0px;
   justify-content: center;
   align-items: center;
 
 }
 
+.W8 {
+  width: 800px;
+  overflow: hidden;
+  flex-shrink: 0;
+} */
+
 .home-container {
 
   overflow: hidden;
 }
-
+/* 
 .HeroImg{
   position: relative;
   right: -120px;
-  top: 50px;
+  top: 0px;
   
 }
 
@@ -180,21 +188,23 @@ a{
   flex-shrink: 0;
 }
 
+
+
 .HeroText{
  display: flex;
  flex-direction: column;
  gap: 40px;
-}
+} */
 
-.test {
+/* .test {
   background-color: black;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-}
+} */
 
-.login-container{
+/* .login-container{
     padding-block : 20px;
     padding-inline: 35px;
   display: flex;
@@ -205,13 +215,13 @@ a{
   gap: 30px;
   border-radius: 10px;
 
-}
+} */
 
-.login-container button {
+/* .login-container button {
   align-self: stretch;
-}
+} */
 
-.login-container img {
+/* .login-container img {
   width: 20px;
   position: absolute;
   top: 6.5%;
@@ -222,7 +232,7 @@ a{
 
 .login-text {
   font-size:2em;
-}
+} */
 
 .btn-login {
   background-color: #864AF9;
@@ -255,16 +265,16 @@ a{
 
   z-index: 1; /* Ensure label appears above the input field */
 }
-.input-field {
+/* .input-field {
   padding: 15px;
   border: 3px solid #864AF9;
   border-radius: 5px;
-  width:260px;
+  width: 100%;
   align-self: stretch;
-  position: relative; /* Needed for pseudo-elements */
-}
+  position: relative; 
+} */
 
-.UserIcon{
+/* .UserIcon{
   position: absolute;
   bottom: 35%; 
 }
@@ -273,7 +283,7 @@ a{
   position: absolute;
 
   bottom: 35%; 
-}
+} */
 
 .gender {
   display: flex;
@@ -286,7 +296,7 @@ a{
   border: 3px solid #864AF9; 
   border-radius: 5px;
   padding-inline: 50px;
-  
+  width: 45%;
   cursor: pointer;
   transition: background-color 0.3s ease, border-color 0.3s ease; /* Add transitions for background color and border color */
   padding-block: 10px;
@@ -309,10 +319,6 @@ a{
   top: 25%;
 }
 
-.CloseImgSignup{
-  position: absolute;
-  bottom: 91.7%;
-}
 
 
 .hover-effect:hover{
@@ -320,7 +326,7 @@ a{
 
 }
 
-.hidden {
+.hideit{
   display: none;
 }
 
@@ -353,12 +359,16 @@ a{
   
   
 }
+
+
 .search-field {
   background-color: #864AF9;
+  color: white;
   border: none;
   border-radius: 25px;
   padding-inline: 20px;
-  width: 60%;
+  width: 100%;
+  height: 50px;
 }
 .search-field::placeholder{
   text-align: left;
@@ -369,6 +379,7 @@ a{
   position: relative;
   display: flex;
   height: 520px;
+  width: 370px;
   flex-direction: column;
   gap: 30px;
   padding: 20px;
@@ -398,18 +409,15 @@ a{
   align-items: center;
   
 }
-.Friends-container :hover {
-  background-color: #864AF9;
-  border-radius: 5px;
-  color: white;
-}
+
 
 .Friends-container{
   display: flex;
   flex-direction: column;
   gap: 1px;
-  overflow-y: scroll;
+  
   max-height: 370px;
+  
 }
 
 
@@ -432,13 +440,16 @@ a{
 .chat-container {
   padding: 20px;
   min-width: 700px;
-  max-height: 385px;
-  overflow-y: scroll;
+  min-height: 380px;
+  max-height:380px;
+
 }
 
 
 .chat-wrapper{
-  min-height: 200px;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
   animation:slideIn 0.7s ease-in;
 }
 @keyframes slideIn {
@@ -447,6 +458,7 @@ a{
 }
 
 .towho-container {
+
   padding-block: 20px;
   padding-inline: 10px;
   border-top-right-radius: 25px;
@@ -461,18 +473,24 @@ a{
   position: absolute;
   cursor: pointer;
   right: 5%;
-  top: 20%;
+  top: 23%;
 }
 
 .SendMessage-input input {
   background-color: white;
   border: 5px solid #864AF9;
+  color: #864AF9;
   border-radius: 7px;
   padding: 10px;
-  width: 90%;
+  width: 94%;
   margin-bottom: 20px;
   
 }
+
+input:focus {
+  outline: none;
+}
+
 .SendMessage-input {
   position: relative;
   display: flex;
@@ -493,10 +511,9 @@ a{
 
 
 .message-container {
-  display:flex;
+  
   gap:10px;
-  align-items: center;
-  justify-content: right;
+
 }
 
 .message-container img {
@@ -524,7 +541,7 @@ a{
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 7px;
   cursor: pointer;
 }
 
@@ -540,3 +557,17 @@ a{
 ::-webkit-scrollbar-thumb:hover {
   background: #864AF9;
 }
+
+.purple-border {
+  border : 3px solid #864AF9;
+}
+
+.invitations {
+  display: flex;
+  gap: 15px;
+}
+
+.invitations img{
+  width :50px;
+}
+

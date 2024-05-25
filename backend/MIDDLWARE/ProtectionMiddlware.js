@@ -4,9 +4,10 @@ const User = require("../MODELS/user.model");
 const ProtectRoute = async (req,res,next)=>{
     try {
         const token = req.cookies.jwt;
-        console.log("ccokie dzab")
+        console.log("token is : " + token);
         if(!token)
             return res.status(401).json({error : "Unauthorized access : no token provided"});
+        
         const decoded  = jwt.verify(token , process.env.TOKEN_SECRET);
         if(!decoded)
             return res.status(401).json({error : "Unauthorized access : Token is invalid"});

@@ -3,16 +3,18 @@ import logoutImg from "../assets/leave.png";
 import LogoutHook from "../Hooks/UseLogout";
 function Logout() {
   const {loading,logout} = LogoutHook();
-  console.log(loading);
   const HandleLogout = async ()=>{
-    logout();
+    await logout();
   }
-
+ 
 
 
   return (
     <div>
-      <img className='logout-img' src={logoutImg} alt="Logout"  onClick={HandleLogout} />
+      {loading ? <span className="loading loading-spinner loading-sm"></span>  : 
+       <img className='logout-img' src={logoutImg} alt="Logout"  onClick={HandleLogout} />
+      }
+     
 
       </div>
   )

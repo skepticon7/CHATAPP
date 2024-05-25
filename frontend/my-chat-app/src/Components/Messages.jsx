@@ -1,20 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Message from "./Message";
-import UserGetMessages from '../Hooks/GetMessagesHook';
-import UseConversations from '../zustand/UseConversations';
- async function  Messages() {
-  const {loading,Messages} = UseConversations();
-  console.log(loading);
-  return (
-    <>
-        <Message/>
-        <Message/>
-        <Message/>
-        <Message/>
-        <Message/>
-        <Message/>
 
-    </>
+
+function Messages() {
+
+
+
+  return (
+    
+    <Message />
+       
+
+    
 
    
   )

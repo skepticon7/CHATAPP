@@ -6,11 +6,11 @@ const MessageRoute = require("./ROUTES/messages.routes.js");
 const UserRoute  = require("./ROUTES/user.routes.js");
 const RouterProtection = require("./MIDDLWARE/ProtectionMiddlware.js");
 const cookieParser = require("cookie-parser"); 
-
+const {app, server} = require("./SOCKET/socket.js");
 
 
 dotenv.config({path : "../.env"});
-const app = express();
+
 ConnectToDb();
 app.use(express.json());
 app.use(cookieParser());
@@ -21,7 +21,7 @@ app.use("/api",UserRoute);
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT , ()=>{
+server.listen(PORT , ()=>{
     
     console.log("listening on port "+PORT);
 })

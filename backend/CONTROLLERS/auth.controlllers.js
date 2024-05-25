@@ -1,8 +1,8 @@
 const User = require("../MODELS/user.model");
 const bcrypt = require("bcrypt");
-const BoyPic = "https://avatar.iran.liara.run/public/boy?username=Scott";
-const GirlPic = "https://avatar.iran.liara.run/public/girl?username=Maria";
 const GenTokenAndSetCookie = require("../UTILS/GenTokenAndSetCookie");
+const jwt = require("jsonwebtoken");
+const  AvatarGenerator = require("../UTILS/AvatarGen.js");
 const login = async (req,res) => {
     const {username , password} = req.body;
     try {
@@ -12,7 +12,7 @@ const login = async (req,res) => {
             if(!PswCompare)
                 return res.status(400).json({error:"error,Invalid password"});
             GenTokenAndSetCookie(user._id,res);
-            return res.status(200).json({msg:"token added" , id:user._id });
+            return res.status(200).json({msg:"token added" , id:user._id , profilePicture : user.profilePicture });
         }
         return res.status(400).json({error:"error,invalid username"});
     } catch (error) {
@@ -41,7 +41,7 @@ const signup = async (req,res)=>{
            username : username,
            gender :gender,
            password : hashedpsw,
-           profilePicture : gender === 'male' ? BoyPic : GirlPic
+           profilePicture : AvatarGenerator(gender)
         });
         await NewUser.save().then(()=>{
             console.log("user successfully saved to the DB");
@@ -64,6 +64,7 @@ const signup = async (req,res)=>{
 
 const logout = (req,res)=>{
     try {
+        console.log("logout controller reached");
         res.cookie("jwt","",{maxAge:0});
         return res.status(200).json({msg:"Token removed"});
     } catch (error) {
@@ -72,5 +73,22 @@ const logout = (req,res)=>{
     }
 }
 
+const verifyCookie = (req,res)=>{
+    const token  = req.cookies.jwt;
+    const UserId = req.query.UserId;
+    console.log(token , UserId);
+    try {
+        if(!token)
+            return res.status(401).json({error : "Anauthorized , No Token provided"});
+        const decoded = jwt.verify(token , process.env.TOKEN_SECRET);
+        if(decoded.userId!==UserId)
+            return res.status(401).json({error: "Unauthorized , wrong token provided"});
+        return res.status(200).json({success:true});
+    } catch (error) {
+        console.log("error in token controller");
+        return  res.status(500).json({error: "Internal Server Error"});
+    }
+}
 
-module.exports = { login , signup , logout};
+
+module.exports = { login , signup , logout ,verifyCookie};
