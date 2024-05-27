@@ -68,7 +68,7 @@ const logout = (req,res)=>{
         res.cookie("jwt","",{maxAge:0});
         return res.status(200).json({msg:"Token removed"});
     } catch (error) {
-        console.log("logout controller failure");
+        console.log("logout controller failure" + error);
         return res.status(500).json({error:"Internal Server Error"});
     }
 }
