@@ -7,22 +7,18 @@ const UserRoute  = require("./ROUTES/user.routes.js");
 const cookieParser = require("cookie-parser"); 
 const {app, server} = require("./SOCKET/socket.js");
 const path = require("path");
-const cors = require('cors');
 
-app.use(cors({
-  origin: 'https://chatify-pod8.onrender.com',
-  credentials: true,
-}));
 dotenv.config();
 
 ConnectToDb();
 
 const dirname = path.resolve();
+
 app.use(express.static(path.join(dirname ,"/frontend/my-chat-app/dist")));
 
-app.get("*",(req,res)=>{
-    res.sendFile(path.join(dirname , "frontend" ,"my-chat-app" , "dist"   , "index.html"));
-})
+// app.get("*",(req,res)=>{
+//     res.sendFile(path.join(dirname , "frontend" ,"my-chat-app" , "dist" , "index.html"));
+// })
 
 app.use(express.json());
 app.use(cookieParser());
