@@ -13,10 +13,10 @@ dotenv.config();
 ConnectToDb();
 
 
-app.use(express.static(path.join(__dirname ,"/frontend/my-chat-app/dist")));
+app.use(express.static(path.join(__dirname ,"/frontend/dist")));
 
 app.get("*",(req,res)=>{
-    res.sendFile(path.join(__dirname , "frontend" , "my-chat-app","dist" , "index.html"));
+    res.sendFile(path.join(__dirname , "frontend" ,"dist" , "index.html"));
 })
 
 app.use(express.json());
