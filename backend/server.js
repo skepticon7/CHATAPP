@@ -8,7 +8,8 @@ const cookieParser = require("cookie-parser");
 const {app, server} = require("./SOCKET/socket.js");
 const path = require("path");
 
-dotenv.config();
+
+dotenv.config({path : "../.env"});
 
 ConnectToDb();
 
