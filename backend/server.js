@@ -7,7 +7,12 @@ const UserRoute  = require("./ROUTES/user.routes.js");
 const cookieParser = require("cookie-parser"); 
 const {app, server} = require("./SOCKET/socket.js");
 const path = require("path");
+const cors = require('cors');
 
+app.use(cors({
+  origin: 'https://chatify-pod8.onrender.com',
+  credentials: true,
+}));
 dotenv.config();
 
 ConnectToDb();
