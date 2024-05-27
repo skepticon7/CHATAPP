@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "node backend/server.js",
-    "build" : "npm install && npm install --prefix frontend/my-chat-app && npm run build --prefix frontend/my-chat-app"
+    "start" : "nodemon backend/server.js",
+    "build" : "npm install && npm install --prefix frontend/my-chat-app  --production=false && npm run build --prefix frontend/my-chat-app"
   },
   "author": "",
   "license": "ISC",
