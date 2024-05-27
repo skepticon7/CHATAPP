@@ -15,7 +15,7 @@ const ChangeToSeen = () =>{
                 });
                 const data = await res.json();
                 if(data.error) throw new Error(data.error);
-                console.log(data);
+                console.log(data); 
             }catch(error) {
                 toast.error(error.message);
             }finally {

@@ -17,7 +17,7 @@ function App() {
         const query = new URLSearchParams({UserId : AuthUser.id});
         const URL = "/api/verify?"+query;
         const res = await fetch(URL);
-        const data = await res.json();
+        const data = await res.json(); 
         if(data.error) {
           localStorage.removeItem("chat-user"); 
         }
