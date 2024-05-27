@@ -12,7 +12,7 @@ export const SocketContextProvider  = ({children})=>{
     const [onlineUsers , setOnlineUsers] = useState([]);
     useEffect(()=>{
         if(AuthUser) {
-            const socket = io("http://localhost:5050",{
+            const socket = io("https://chatify-pod8.onrender.com",{
                 query : {
                     UserId : AuthUser.id,
                 }
