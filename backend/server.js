@@ -16,7 +16,9 @@ const dirname = path.resolve();
 
 app.use(express.static(path.join(dirname ,"/frontend/my-chat-app/dist")));
 
-// r
+app.get("*",(req,res)=>{
+    res.sendFile(path.join(dirname , "frontend" ,"my-chat-app" , "dist" , "index.html"));
+})
 
 app.use(express.json());
 app.use(cookieParser());
