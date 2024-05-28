@@ -7,7 +7,7 @@ const GetUsers = async (req, res) => {
         if (mongoose.Types.ObjectId.isValid(LoggedUser)) {
             // Find the logged-in user and populate the friendId in the friends array
             const userWithFriends = await User.findOne({ _id: LoggedUser }).populate("friends.friendId");
-            
+            console.log("hey : " + userWithFriends);
             if (userWithFriends) {
                 console.log(userWithFriends.friends);
                 return res.status(200).json(userWithFriends.friends);
