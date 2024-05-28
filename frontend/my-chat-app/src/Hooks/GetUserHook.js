@@ -18,6 +18,7 @@ const UseGetConversations = () => {
                     throw new Error(data.error);
                     
                 }
+                console.log("data :" + data);
                 setConversation(data);
                 
             } catch (error) {
