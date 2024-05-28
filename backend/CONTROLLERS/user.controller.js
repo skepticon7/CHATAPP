@@ -10,7 +10,7 @@ const GetUsers = async (req, res) => {
             
             if (userWithFriends) {
                 
-                return res.status(200).json(userWithFriends.friends);
+                return res.status(200).json({data :userWithFriends.friends });
             }
             
             return res.status(404).json("User not found");
