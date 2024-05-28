@@ -17,7 +17,7 @@ const login = async (req,res) => {
         return res.status(400).json({error:"error,invalid username"});
     } catch (error) {
         console.log("login controlled failed" + error);
-        return res.status(500).json({error:"Internal Server Error"});
+        return res.status(500).json({error:"Internal Server Error" + error});
     }
 }
 
