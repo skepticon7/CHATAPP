@@ -22,7 +22,7 @@ const UseGetConversations = () => {
                 
             } catch (error) {
                 
-                toast.error("test");
+                toast.error(error.messages);
                 
             } finally {
                 setLoading(false);
