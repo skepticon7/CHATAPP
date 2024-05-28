@@ -6,10 +6,7 @@ const Message = require("../MODELS/message.model");
 const User = require("../MODELS/user.model");
 const Conversation = require("../MODELS/conversation.model");
 const server = http.createServer(app);
-const io = new Server(server,{
-    cors:["https://chatify-pod8.onrender.com"],
-    methods :["GET" , "POST"]
-});
+const io = new Server(server);
 
 const UserSocket = {};
 
