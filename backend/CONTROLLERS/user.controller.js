@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 
 const GetUsers = async (req, res) => {
     try {
-        const LoggedUser = req.user._id;
+        const LoggedUser = req.user._id; 
+        console.log("reached");
         if (mongoose.Types.ObjectId.isValid(LoggedUser)) {
             // Find the logged-in user and populate the friendId in the friends array
             const userWithFriends = await User.findOne({ _id: LoggedUser }).populate("friends.friendId");
