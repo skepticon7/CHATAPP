@@ -9,6 +9,7 @@ const GetUsers = async (req, res) => {
             const userWithFriends = await User.findOne({ _id: LoggedUser }).populate("friends.friendId");
             
             if (userWithFriends) {
+                console.log(userWithFriends.friends);
                 return res.status(200).json(userWithFriends.friends);
             }
             

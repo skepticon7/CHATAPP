@@ -6,7 +6,10 @@ const Message = require("../MODELS/message.model");
 const User = require("../MODELS/user.model");
 const Conversation = require("../MODELS/conversation.model");
 const server = http.createServer(app);
-const io = new Server(server);
+const io = new Server(server,{
+    cors:["http://localhost:3000"],
+    methods :["GET" , "POST"]
+});
 
 const UserSocket = {};
 
